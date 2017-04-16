@@ -61,8 +61,11 @@ public class BirthdayEvent {
      */
     public String getDateAsString() {
         SimpleDateFormat smp = new SimpleDateFormat("dd MMMMM yyyy");
-        String strDate = (null == date || null == date.get())
-                ? "" : smp.format(date.get());
+        String strDate = "";
+
+        if(null !== this.date || null !== this.date.get()) {
+            strDate = smp.format(date.get())
+        }
         
         return strDate;
     }
