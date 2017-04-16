@@ -33,13 +33,13 @@ public class Main extends Application {
         stage.setWidth(315);
         stage.setHeight(450);
 
-        final ObservableList<BirthdayEvent> dataList
-                = FXCollections.observableArrayList(
+        final ObservableList<BirthdayEvent> dataList = FXCollections.observableArrayList(
                         new BirthdayEvent("Jacob", new Date()),
                         new BirthdayEvent("Isabella", new Date()),
                         new BirthdayEvent("Ethan", new Date()),
                         new BirthdayEvent("Emma", new Date()),
-                        new BirthdayEvent("Michael", new Date()));
+                        new BirthdayEvent("Michael", new Date())
+        );
 
         TableView table = new TableView();
         table.setEditable(true);
