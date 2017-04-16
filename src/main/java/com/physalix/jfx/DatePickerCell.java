@@ -31,7 +31,6 @@ public class DatePickerCell<S, T> extends TableCell<BirthdayEvent, Date> {
      * @param listBirthdays
      */
     public DatePickerCell(ObservableList<BirthdayEvent> listBirthdays) {
-
         super();
         
         this.birthdayData = listBirthdays;
@@ -66,21 +65,17 @@ public class DatePickerCell<S, T> extends TableCell<BirthdayEvent, Date> {
         if (null == this.datePicker) {
             System.out.println("datePicker is NULL");
         }
-
+        if (isEditing()) {
+            setContentDisplay(ContentDisplay.TEXT_ONLY);
+        } else {
+            setDatepikerDate(smp.format(item));
+            setText(smp.format(item));
+            setGraphic(this.datePicker);
+            setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
+        }
         if (empty) {
             setText(null);
             setGraphic(null);
-        } else {
-
-            if (isEditing()) {
-                setContentDisplay(ContentDisplay.TEXT_ONLY);
-
-            } else {
-                setDatepikerDate(smp.format(item));
-                setText(smp.format(item));
-                setGraphic(this.datePicker);
-                setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
-            }
         }
     }
 
